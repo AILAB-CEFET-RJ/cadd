@@ -40,13 +40,7 @@ XlsxWriter
    cd src
    ```
 
-5. Editar o arquivo **`main.py`** para definir o período letivo desejado.
-
-6. Executar:
-
-   ```bash
-   python main.py
-   ```
+5. Executar o `main.py`
 
 Os relatórios em **Excel** e **HTML** serão gerados dentro da pasta `resultados`.
 
@@ -56,31 +50,21 @@ Os relatórios em **Excel** e **HTML** serão gerados dentro da pasta `resultado
 
 Você também pode rodar cada script separadamente, informando período (`-p`), pasta de entrada (`-i`) e pasta de saída (`-o`).
 
-### Exemplo: relatórios do período **2016.1**
+### Exemplo: relatórios do período **2025.1**
 
 ```bash
-python main_faixas_criticidade.py -p 2016.1 -i ../data -o ../resultados
-python main_integralizacoes.py   -p 2016.1 -i ../data -o ../resultados
-python main_reprovacoes.py       -p 2016.1 -i ../data -o ../resultados
-```
-
-### Exemplo: relatórios do período **2016.2**
-
-```bash
-python main_faixas_criticidade.py -p 2016.2 -i ../data -o ../resultados
-python main_integralizacoes.py   -p 2016.2 -i ../data -o ../resultados
-python main_reprovacoes.py       -p 2016.2 -i ../data -o ../resultados
+python main_faixas_criticidade.py -p 2025.1 -i ../data -o ../resultados
+python main_integralizacoes.py   -p 2025.1 -i ../data -o ../resultados
+python main_reprovacoes.py       -p 2025.1 -i ../data -o ../resultados
 ```
 
 ### Script unificado
 
-Também é possível rodar todos os relatórios de uma vez com:
+Também é possível rodar todos os relatórios de uma vez. Por exemplo, para gerar todos os relatórios para o período 2025.1:
 
 ```bash
-python main.py
+python main.py -p 2025.1 -i ../data -o ../resultados
 ```
-
-> **Nota**: edite previamente o arquivo `main.py` para atualizar o período letivo.
 
 ---
 
@@ -91,7 +75,7 @@ Além dos relatórios em CSV, há scripts que processam diretamente os arquivos 
 ### Exemplo de uso:
 
 ```bash
-python processar_excel.py -f "C:/Users/SeuUsuario/Dropbox/CEFET/COSAC/ComissaoCADD/11.02.05.99.60-GPROD.xlsx"
+python processar_excel.py -f "../data/11.02.05.99.60-GPROD.xlsx"
 ```
 
 Esse comando processa o arquivo Excel informado e gera um resumo com aprovações, reprovações, trancamentos e matrículas.
